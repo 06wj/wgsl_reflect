@@ -670,6 +670,10 @@ export class Loop extends Statement {
   get astNodeType(): string {
     return "loop";
   }
+
+  search(callback: (node: Node) => void): void {
+    this.searchBlock(this.body, callback);
+  }
 }
 
 /**
